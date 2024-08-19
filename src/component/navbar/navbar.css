@@ -1,0 +1,17 @@
+.bg-customeColor{
+    background-color: black;
+    color:white !important
+}
+
+.navul li a{
+    color:white !important;
+}
+.navul li a:hover{
+    text-decoration: overline;
+    /* font-style: italic; */
+    font-weight: 500;
+}
+
+.navul li a:active{
+    color:blue;
+}

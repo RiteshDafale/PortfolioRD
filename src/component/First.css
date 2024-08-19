@@ -1,0 +1,116 @@
+.photo{
+    width:320px;
+}
+.bg-divcolor{   
+    background-color: aquamarine;
+}
+
+.image img{
+    width:300px;
+    height:300px;
+    object-fit: cover;
+    
+}
+
+.innerPhotoImage{
+    margin-left:188px !important;
+}
+.border{
+    height:71vh;
+}
+
+.firstcol{
+    width:25px !important; 
+}
+
+.intro{
+    font-style: italic;
+}
+.contentAbout{
+    /* border:2px solid red; */
+    display: inline-block;
+}
+.iconSize{
+    font-size: 23px;;
+}
+
+.projectHeadline{
+    text-decoration: overline;
+}
+
+.clinicCard{
+    width: 340px;
+}
+.project{
+    height: fit-content !important;
+}
+.roundedskills{
+    border-radius: 23px;
+}
+
+.proj1:hover{
+    background-color: rgb(91, 91, 229);
+    color:white !important;
+    cursor:pointer;
+}
+
+
+/* media query responsive */
+@media only screen and (max-width: 600px) {
+    .firstrow{
+        /* border:2px solid red; */
+        font-size: 12px;
+       display: flex;
+       flex-direction: column;
+    }
+    .innerPhotoImage{
+        margin-left: 0px !important;
+    }
+    .image img {
+      height:200px;
+      width:200px;
+      object-fit: cover;
+        margin-bottom: 11px;
+    }
+    .photocol{
+        /* background-color: blue; */
+        width: 102% !important;
+        margin-top: 0 !important;
+        display: flex;
+        justify-content: center;
+        padding-right: 65px;
+        align-items: center;
+    }
+    .selfnameH{
+        padding-top:0px !important;
+    }
+    .contentcol{
+        /* background-color: green; */
+        width: 100% !important;
+        margin-top:0 !important;
+        margin: auto;
+        width: 60%;
+        /* border: 3px solid #73AD21; */
+        padding: 10px;
+    }
+    .secondSession{
+        /* background-color: orange; */
+        display: flex;
+        flex-direction: column;
+        ;
+    }
+    
+    .contentAbout{
+        width: max-content;
+    }
+    .para{
+        font-size: 1rem;
+    }
+    .introContent{
+    }
+    .proj1{
+        margin-left:0px !important;
+    }
+}
+
+ 

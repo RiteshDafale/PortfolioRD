@@ -1,0 +1,11 @@
+ <div className="firstSession">
+                    <div class="row  border ">
+                        <div class="col ">
+                            <img src={mypic} alt='Some problem' className='photo m-3'></img>
+                        </div>
+                        <div class="col border  position-relative ">
+                            <h3 className='mt-5'>Ritesh Dafale</h3>
+                            <p className='text-start text-primary position-absolute top-50 start-50 translate-middle text-black'>I'm an MCA graduate from 2024, passionate about programming and eager to start my career as a Java Developer or Frontend Developer, with strong skills in Java 8, Spring Boot, Spring MVC, and React.</p>
+                        </div>
+                    </div>
+                </div>
