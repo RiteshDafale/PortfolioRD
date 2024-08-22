@@ -15,3 +15,6 @@
 .navul li a:active{
     color:blue;
 }
+.btnColor{
+    background-color: white;
+}
