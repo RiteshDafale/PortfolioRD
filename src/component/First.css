@@ -300,11 +300,14 @@ animation and border radius */
    .swing{
     margin-left: 84px !important;
    }
+   .para{
+    margin-top: 25px;
+ }
 }
 
 /* Media query for Ipads  */
 @media  (min-width:576px) and (max-width: 984px){
-     .project{
-        border:2px solid red;
+     .para{
+        margin-top: 25px;
      }
 }

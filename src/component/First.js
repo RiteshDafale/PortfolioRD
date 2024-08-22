@@ -47,7 +47,7 @@ export default function First() {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="row skills border text-white  mt-5 ">
+                        <div className="row skills  text-white  mt-5 ">
                             <h3 className=''>Skills</h3>
                             <div className="col-lg-6  ">
                                 <div class="progress-bar-container mt-4  ">
@@ -145,7 +145,7 @@ export default function First() {
                             <p className='text-center sm-font'>While learning HTML, CSS, and JavaScript, I am recreating Amazon’s e-commerce platform. This practice project allows me to apply and enhance my web development skills.</p>
                             <button className='btn btn-dark rounded-3 mb-2 Amazonbtn'> Explore More</button>
                         </div>
-                        <div className="col-lg-3 col-md-3   text-white border mt-3  project bg-secondary snake ">
+                        <div className="col-lg-3 col-md-3   text-white p-2 mt-3  project bg-secondary snake ">
                             <h5 className='mt-3 text-decoration-underline  '>Snake Game</h5>
                             <div className="skills d-flex mt-4 ">
                                 <p className=' bg-primary borderRadius'>Java</p>
