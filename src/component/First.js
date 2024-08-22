@@ -154,12 +154,64 @@ export default function First() {
                             <div className='snakePara'>
                                 <p className='text-center para sm-font '>During my Java programming for fun , I attempted to create a Snake game using Swing and AWT, snake is controlled by left, right, and up buttons, with key event handling </p>
                                 <button className='btn btn-dark rounded-3  btn'> Explore More</button>
-
                             </div>
                         </div>
                         {/* Project complete */}
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div className="container border border-white mt-5 bg-white">
+                    <div className="contactText border-bottom border-primary ">
+                        <h3>Contact form</h3>
+                        <p>Get in touch with us! We'd love to hear from you.</p>
+                    </div>
+                    <div className=" container border w-50 mt-3 bg-dark contactForm text-white">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                {/* <label for="inputEmail4" class="form-label">Email</label> */}
+                                <input type="text" placeholder='First Name' class="form-control mt-4" id="inputEmail4" />
+                            </div>
+                            <div class="col-md-6">
+                                {/* <label for="inputPassword4" class="form-label">Password</label> */}
+                                <input type="text" placeholder='Last Name' class="form-control mt-4" id="inputPassword4" />
+                            </div>
+                            <div class="col-12">
+                                {/* <label for="inputAddress" class="form-label">Address</label> */}
+                                <input type="email" class="form-control mt-3" id="inputAddress" placeholder="Email Address" />
+                            </div>
+                            <div class="col-12">
+                                {/* <label for="inputAddress" class="form-label">Address</label> */}
+                                <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Subject" />
+                            </div>
+                            <div class="col-12">
+                                {/* <label for="inputAddress" class="form-label">Address</label> */}
+                                <textarea class="form-control mt-3" placeholder="Message ..." id="floatingTextarea"></textarea>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center align-items-center ">
+                                <button type="submit" class="btn btn-primary mb-2 ">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
 
                 <div className="row secondSession ">
                     <h2 className='text-white mt-5 text-decoration-underline text-decoration-red aboutHead'>About me</h2>
