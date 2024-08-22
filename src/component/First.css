@@ -301,3 +301,10 @@ animation and border radius */
     margin-left: 84px !important;
    }
 }
+
+/* Media query for Ipads  */
+@media  (min-width:576px) and (max-width: 984px){
+     .project{
+        border:2px solid red;
+     }
+}

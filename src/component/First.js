@@ -125,8 +125,7 @@ export default function First() {
                 <div className="  project mt-5">
                     <div className="row rowdiv  ">
                         <h3 className='text-white mt-4 mainhead' >Projects</h3>
-                        {/* <div className="colums d-flex "> */}
-                        <div className="col-lg-3 col-sm-1 col-md-2  text-white   mt-3 project p-2 shadow bg-secondary clinicMargin">
+                        <div className="col-lg-3 col-md-3   text-white   mt-3 project p-2 shadow bg-secondary clinicMargin">
                             <h5 className='mt-3 text-decoration-underline  '>Clinic Management System</h5>
                             <div className="skills d-flex mt-4 ">
                                 <p className=' bg-primary borderRadius  '>Java</p>
@@ -136,7 +135,7 @@ export default function First() {
                             <button className='btn btn-dark rounded-3 clinicbtn'> Explore More</button>
 
                         </div>
-                        <div className="col-lg-3  text-white    project amazon mt-3 bg-secondary">
+                        <div className="col-lg-3 col-md-3  text-white    project amazon mt-3 bg-secondary">
                             <h5 className='mt-3 pt-2 text-decoration-underline pb-2  '>Amazon Clone</h5>
                             <div className="skills d-flex mt-4 ">
                                 <p className=' bg-primary borderRadius '>HTML</p>
@@ -146,7 +145,7 @@ export default function First() {
                             <p className='text-center sm-font'>While learning HTML, CSS, and JavaScript, I am recreating Amazon’s e-commerce platform. This practice project allows me to apply and enhance my web development skills.</p>
                             <button className='btn btn-dark rounded-3 mb-2 Amazonbtn'> Explore More</button>
                         </div>
-                        <div className="col-lg-3 col-sm-1 col-md-2 text-white border mt-3  project bg-secondary snake ">
+                        <div className="col-lg-3 col-md-3   text-white border mt-3  project bg-secondary snake ">
                             <h5 className='mt-3 text-decoration-underline  '>Snake Game</h5>
                             <div className="skills d-flex mt-4 ">
                                 <p className=' bg-primary borderRadius'>Java</p>
