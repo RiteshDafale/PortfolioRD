@@ -1,78 +1,219 @@
-.photo{
-    width:320px;
+.photo {
+    width: 320px;
 }
-.bg-divcolor{   
+
+.bg-divcolor {
     background-color: aquamarine;
 }
 
-.image img{
-    width:300px;
-    height:300px;
+.image img {
+    width: 300px;
+    height: 300px;
     object-fit: cover;
-    
+
 }
 
-.innerPhotoImage{
-    margin-left:188px !important;
-}
-.border{
-    height:71vh;
+.firstcol {
+    width: 25px !important;
 }
 
-.firstcol{
-    width:25px !important; 
-}
-
-.intro{
+.intro {
     font-style: italic;
 }
-.contentAbout{
+
+.contentAbout {
     /* border:2px solid red; */
     display: inline-block;
 }
-.iconSize{
-    font-size: 23px;;
+
+.iconSize {
+    font-size: 23px;
+    ;
 }
 
-.projectHeadline{
+.projectHeadline {
     text-decoration: overline;
 }
-
-.clinicCard{
+.project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.borderRadius{
+    width: 58px;
+    border-radius: 12px
+}
+.clinicCard {
     width: 340px;
 }
-.project{
+
+.project {
     height: fit-content !important;
 }
-.roundedskills{
+
+.roundedskills {
     border-radius: 23px;
 }
 
-.proj1:hover{
-    background-color: rgb(91, 91, 229);
-    color:white !important;
-    cursor:pointer;
+.proj1:hover {
+    /* background-color: rgb(137, 137, 240); */
+    color: white !important;
+    cursor: pointer;
 }
+  .clgpara{
+    font-size: 1rem;;
+  }
+.Leftline{
+    border-left: 5px white;
+    border-radius: 14px;
+    border-left-style: dashed;
+    padding-left: 10px;
+    /* background-color: #f95959; */
+    padding: 13px;
+}
+
+.rowdiv{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bg-secondary{
+    background-color: rgb(68, 63, 63);
+}
+
+.snakebtn{
+    margin-top: 14px;
+}
+.clinicbtn{
+    margin-bottom: 13px;
+}
+
+.clinicPara{
+    /* margin-top: 2px; */
+    margin-bottom: 22px;
+}
+.btn{
+    position: relative;
+    top: 9px;
+}
+.Amazonbtn{
+    position: relative;
+    top: 0px;
+}
+.snakeFormat{
+    border:2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.snake{
+    padding-bottom: 16px;
+}
+
+
+/* skill animated progress bar */
+
+.progress-bar-container:not(:last-child) {
+    margin-bottom: 50px;
+
+}
+
+/* Styling the h2 tag by giving color, 
+letter spacing, font-size etc.*/
+.progress-bar-container h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #eee;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+.persentFont{
+    font-size: 9px;;
+}
+/* Styling the border and box
+effect of the progress bar*/
+.progress-bar {
+    width: 800px;
+    height: 12px;
+    margin-top: 10px;
+    border: 1px solid #565656;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgb(245, 159, 0);
+}
+
+/* Stylingthe background color of each 
+animation and border radius */
+.percentage {
+    display: block;
+    height: 100%;
+    background-color: orange;
+    border-radius: 5px;
+    animation: progress 1500ms ease-in 1;
+}
+
+@keyframes progress {
+    from {
+        width: 0;
+    }
+}
+
+.html {
+    width: 100%;
+}
+.css {
+    width: 100%;
+}
+.js {
+    width: 67%;
+}
+.bootstrap {
+    width: 70%;
+}
+
+.corejava{
+    width:90%;
+}
+.mvc{
+    width:70%;
+}
+.boot{
+    width:60%;
+}
+.oracle{
+    width:79%;
+}
+.progressContent{
+    display: flex;
+    justify-content: space-between;
+}
+/* ===================================================== */
+
+
 
 
 /* media query responsive */
 @media only screen and (max-width: 600px) {
-    .firstrow{
+    .firstrow {
         /* border:2px solid red; */
         font-size: 12px;
-       display: flex;
-       flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
-    .innerPhotoImage{
+
+    .innerPhotoImage {
         margin-left: 0px !important;
     }
+
     .image img {
-      height:200px;
-      width:200px;
-      object-fit: cover;
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
         margin-bottom: 11px;
     }
-    .photocol{
+
+    .photocol {
         /* background-color: blue; */
         width: 102% !important;
         margin-top: 0 !important;
@@ -81,36 +222,85 @@
         padding-right: 65px;
         align-items: center;
     }
-    .selfnameH{
-        padding-top:0px !important;
+
+    .intro {
+        margin-right: 0px !important;
+        text-align: justify !important;
+        width: 100% !important;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: -24px !important;
+
     }
-    .contentcol{
+
+    .selfnameH {
+        padding-top: 0px !important;
+        padding-bottom: 29px;
+        margin-left: 67px;
+    }
+
+    .contentcol {
         /* background-color: green; */
         width: 100% !important;
-        margin-top:0 !important;
+        margin-top: 0 !important;
         margin: auto;
         width: 60%;
-        /* border: 3px solid #73AD21; */
+        border: 3px solid #73AD21;
+        align-items: center;
         padding: 10px;
     }
-    .secondSession{
+
+    .secondSession {
         /* background-color: orange; */
         display: flex;
         flex-direction: column;
         ;
     }
-    
-    .contentAbout{
+
+    .amazon {
+        margin-top: 22px;
+        margin-bottom: 22px;
+
+    }
+
+    .skills{
+       /* display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       border:2px solid red; */
+    }
+    .rowdiv {
+        background-color: transparent !important;
+
+    }
+
+    .contentAbout {
         width: max-content;
-    }
-    .para{
-        font-size: 1rem;
-    }
-    .introContent{
-    }
-    .proj1{
         margin-left:0px !important;
     }
-}
 
- 
+     .aboutHead{
+        text-align: justify;
+     }
+    .para {
+        font-size: 1rem;
+    }
+    .sm-font{
+        font-size: 0.95rem;
+        text-align: justify !important;
+    }
+
+    .proj1 {
+        margin-left: 0px !important;
+    }
+
+    .aboutintro {
+        font-size: 0.95rem;
+        margin-right: 0rem !important;
+    }
+
+   .swing{
+    margin-left: 84px !important;
+   }
+}
