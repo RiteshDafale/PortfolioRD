@@ -263,16 +263,13 @@ animation and border radius */
 
     }
 
-    .skills{
-       /* display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       border:2px solid red; */
-    }
     .rowdiv {
         background-color: transparent !important;
-
+        
+    }
+    .row{
+        margin-right: calc(-.0* var(--bs-gutter-x)) !important;
+    margin-left: calc(-.0* var(--bs-gutter)) !important;
     }
 
     .contentAbout {

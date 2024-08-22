@@ -49,7 +49,7 @@ export default function First() {
                     <div className="row">
                         <div className="row skills border text-white  mt-5 ">
                             <h3 className=''>Skills</h3>
-                            <div className="col-lg-6 bg-primary ">
+                            <div className="col-lg-6  ">
                                 <div class="progress-bar-container mt-4  ">
                                     <div className="progressContent">
                                         <h2 className=' text-start barFont'>HTML</h2>
@@ -85,7 +85,7 @@ export default function First() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-6 bg-secondary ">
+                            <div className="col-lg-6  ">
                                 <div class="progress-bar-container mt-4  ">
                                     <h2 className=' text-start barFont'>J2EE</h2>
                                     <div class="progress-bar w-auto">
