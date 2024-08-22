@@ -153,7 +153,7 @@ export default function First() {
                             </div>
                             <div className='snakePara'>
                                 <p className='text-center para sm-font '>During my Java programming for fun , I attempted to create a Snake game using Swing and AWT, snake is controlled by left, right, and up buttons, with key event handling </p>
-                                <button className='btn btn-dark rounded-3 btn'> Explore More</button>
+                                <button className='btn btn-dark rounded-3  btn'> Explore More</button>
 
                             </div>
                         </div>

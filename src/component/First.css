@@ -49,7 +49,7 @@
 }
 
 .project {
-    height: fit-content !important;
+    /* height: fit-content !important; */
 }
 
 .roundedskills {
@@ -73,10 +73,7 @@
     padding: 13px;
 }
 
-.rowdiv{
-    display: flex;
-    justify-content: space-evenly;
-}
+
 
 .bg-secondary{
     background-color: rgb(68, 63, 63);
@@ -93,10 +90,14 @@
     /* margin-top: 2px; */
     margin-bottom: 22px;
 }
-.btn{
-    position: relative;
-    top: 9px;
+.rowdiv{
+    display: flex;
+    justify-content: space-evenly;
 }
+.btn{
+    margin-top:30px;
+}
+/*  */
 .Amazonbtn{
     position: relative;
     top: 0px;
@@ -245,7 +246,6 @@ animation and border radius */
         margin-top: 0 !important;
         margin: auto;
         width: 60%;
-        border: 3px solid #73AD21;
         align-items: center;
         padding: 10px;
     }
