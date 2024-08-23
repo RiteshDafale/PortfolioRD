@@ -163,7 +163,7 @@ export default function First() {
 
                 <div className="container border border-white mt-5 bg-white">
                     <div className="contactText border-bottom border-primary ">
-                        <h3>Contact form</h3>
+                        <h3 className='mt-3'>Contact form</h3>
                         <p>Get in touch with us! We'd love to hear from you.</p>
                     </div>
                     <div className=" container border w-50 mt-3 bg-dark contactForm text-white mb-3">
