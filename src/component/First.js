@@ -161,28 +161,13 @@ export default function First() {
                 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <div className="container border border-white mt-5 bg-white">
                     <div className="contactText border-bottom border-primary ">
                         <h3>Contact form</h3>
                         <p>Get in touch with us! We'd love to hear from you.</p>
                     </div>
-                    <div className=" container border w-50 mt-3 bg-dark contactForm text-white">
-                        <form class="row g-3">
+                    <div className=" container border w-50 mt-3 bg-dark contactForm text-white mb-3">
+                        <form class="row g-3 ">
                             <div class="col-md-6">
                                 {/* <label for="inputEmail4" class="form-label">Email</label> */}
                                 <input type="text" placeholder='First Name' class="form-control mt-4" id="inputEmail4" />
@@ -204,7 +189,7 @@ export default function First() {
                                 <textarea class="form-control mt-3" placeholder="Message ..." id="floatingTextarea"></textarea>
                             </div>
                             <div class="col-12 d-flex justify-content-center align-items-center ">
-                                <button type="submit" class="btn btn-primary mb-2 ">Sign in</button>
+                                <button type="submit" class="btn btn-primary mb-2 mb-3 ">Sign in</button>
                             </div>
                         </form>
                     </div>

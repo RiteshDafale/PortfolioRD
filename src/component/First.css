@@ -303,6 +303,9 @@ animation and border radius */
    .para{
     margin-top: 25px;
  }
+ .contactForm{
+    width:100% !important;
+ }
 }
 
 /* Media query for Ipads  */
