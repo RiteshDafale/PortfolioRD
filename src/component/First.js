@@ -208,7 +208,7 @@ export default function First() {
                     </div>
                 </div>
                 <div className="row secondSession " id="about">
-                    <h2 className='text-white mt-5 text-decoration-underline text-decoration-red aboutHead'>About me</h2>
+                    <h2 className='text-white mt-5 text-decoration-underline text-decoration-red aboutHead  text-center'>About me</h2>
                     <div className="col intro align-middle w-25  ">
                         <div className="contentAbout text-white mt-5  text-start ms-5   ">
                             <p className='font-monospace.'>Name : Ritesh Dafale</p>

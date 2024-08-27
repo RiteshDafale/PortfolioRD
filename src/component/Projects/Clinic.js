@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../navbar/Navbar'
 import video from '../Photos/Clinic/clinic_managemen-video.mp4'
 import '../Projects/clinic.css'
+import Footer from '../Footer/Footer'
 import '/CodeMate_Internship/HTML-CSS//Responsive/Portfolio/ritesh_portfolio/src/App.css'
 // D:\CodeMate_Internship\HTML-CSS\Responsive\Portfolio\ritesh_portfolio\src\App.css
 
@@ -17,7 +18,7 @@ function Clinic() {
           </div>
           <hr />
           <div className="text  d-flex justify-content-center">
-            <div class="w-75 alert alert-info " role="alert">
+            <div class=" alert alert-info " role="alert">
               <h4 class="alert-heading text-start">Clinic Management System</h4>
               <p className='text-start'><strong>Skills</strong> : Swing , AWT and Mysql Workbench</p>
               <hr />
@@ -28,18 +29,23 @@ function Clinic() {
                   Through this venture, I refined my skills in Java programming and database
                   management, accruing valuable experience in crafting practical applcations for
                   real-world scenarios.</p>
-                  <hr/>
-                  <div className="links border  d-flex ">
-                <a href="https://github.com/RiteshDafale/Clinic-Management-Project" className="githublink text-start mx-2 " > Github  </a>
-                <a href=" https://lnkd.in/gXana8eQ " className="githublink text-start"> Linkedin  </a>
+                <hr />
+                <div className="links   d-flex justify-content-between ">
+                  <div className="first">
+                    <a href="https://github.com/RiteshDafale/Clinic-Management-Project" className="githublink text-start mx-2 " > Github  </a>
+                    <a href=" https://lnkd.in/gXana8eQ " className="githublink text-start"> Linkedin  </a>
+                  </div>
+                  <div className="last">
+                  <a href="/PortfolioRD" className="githublink "> <i class="fa-solid fa-arrow-left-long"></i>  </a>            
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+        <Footer/> 
     </div>
   )
 }
-
 export default Clinic

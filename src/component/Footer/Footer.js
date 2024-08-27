@@ -18,17 +18,17 @@ const font = {
           <h4 className='mt-2'>Important links</h4>
           {/* <hr class="border border-primary border-2 opacity-75" /> */}
           <div className="links  mt-4  " style={font}>
-            <p><a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Home</a></p>
-            <p><a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">About</a></p>
-            <p><a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Projects</a></p>
-            <p><a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Contact us</a></p>
+            <p><a href="/PortfolioRD" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Home</a></p>
+            <p><a href="#education" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Education</a></p>
+            <p><a href="#projects" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Projects</a></p>
+            <p><a href="#contact" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Contact us</a></p>
           </div>
         </div>
         <div className="col-lg-3  ">
           <h4 className='mt-2 '>Contacts Details</h4>
           {/* <hr class="border border-primary border-2 opacity-75" /> */}
 
-          <div className="email " style={font}>
+          <div className="email mt-4" style={font}>
             <p className='m-0'>Email at </p>
             <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-white" href="#">
               ritesh.dafale13@gmail
