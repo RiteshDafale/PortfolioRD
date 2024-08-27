@@ -5,7 +5,11 @@ import '../component/First.css'
 import { ReactTyped } from "react-typed";
 import { useNavigate } from 'react-router-dom';
 import Navbar from './navbar/Navbar';
+
 export default function First() {
+        
+    
+    const navigate = useNavigate();
     return (
         <div className=''>
             <div className="container-fluid text-center bg-dark w-100  " id="intro">
@@ -139,7 +143,11 @@ export default function First() {
                                 <p className=' bg-primary borderRadius ms-3'>Swing</p>
                             </div>
                             <p className='text-center para sm-font '>The Clinic Management Project is a patient management system initially developed using Java and MySQL Workbench. It efficiently stores patient data in a database</p>
-                            <button className='btn btn-dark rounded-3 clinicbtn'> Explore More</button>
+
+                            < button
+                                className='btn btn-dark rounded-3 clinicbtn '
+                                onClick={() => navigate("/clinic")}>Explore More
+                            </button>
                         </div>
                         <div className="col-lg-3 col-md-3  text-white    project amazon mt-3 bg-secondary">
                             <h5 className='mt-3 pt-2 text-decoration-underline pb-2  '>Amazon Clone</h5>
@@ -149,7 +157,7 @@ export default function First() {
                                 <p className=' bg-primary borderRadius'>JS</p>
                             </div>
                             <p className='text-center sm-font'>While learning HTML, CSS, and JavaScript, I am recreating Amazon’s e-commerce platform. This practice project allows me to apply and enhance my web development skills.</p>
-                            <button className='btn btn-dark rounded-3 mb-2 Amazonbtn'> Explore More</button>
+                            <button className='btn btn-dark rounded-3 mb-2 Amazonbtn'  onClick={() => navigate("/amazon")}> Explore More</button>
                         </div>
                         <div className="col-lg-3 col-md-3   text-white p-2 mt-3  project bg-secondary snake ">
                             <h5 className='mt-3 text-decoration-underline  '>Snake Game</h5>
@@ -159,7 +167,7 @@ export default function First() {
                             </div>
                             <div className='snakePara'>
                                 <p className='text-center para sm-font '>During my Java programming for fun , I attempted to create a Snake game using Swing and AWT, snake is controlled by left, right, and up buttons, with key event handling </p>
-                                <button className='btn btn-dark rounded-3  btn'> Explore More</button>
+                                <button className='btn btn-dark rounded-3  btn'  onClick={() => navigate("/snake")}> Explore More</button>
                             </div>
                         </div>
                         {/* Project complete */}

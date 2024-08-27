@@ -1,0 +1,16 @@
+.video video{
+    height: 60vh;
+    width: 60vw;
+    padding: 11px;
+}
+.githublink{
+    /* border:2px solid black; */
+    padding: 2px 11px 3px;
+    color:black;
+    text-decoration: none;
+}
+.githublink:hover{
+  /* border:2px solid black; */
+  text-decoration: underline;
+  cursor:pointer;
+}
