@@ -26,17 +26,17 @@ function Navbar() {
           </li>
           <li class="nav-item">
             {/* <a class="nav-link" href="#">Projects</a> */}
-            <HashLink to="#projects" class="nav-link active" aria-current="page">projects</HashLink>
+            <HashLink to="#projects" class="nav-link active" aria-current="page">Projects</HashLink>
 
           </li>
           <li class="nav-item">
             {/* <a class="nav-link" href="#">Contact us</a> */}
-            <HashLink to="#contact" class="nav-link active" aria-current="page">contact</HashLink>
+            <HashLink to="#contact" class="nav-link active" aria-current="page">Contact</HashLink>
 
           </li>
           <li class="nav-item">
             {/* <a class="nav-link" href="#">Contact us</a> */}
-            <HashLink to="#about" class="nav-link active" aria-current="page">about</HashLink>
+            <HashLink to="#about" class="nav-link active" aria-current="page">About</HashLink>
 
           </li>
 

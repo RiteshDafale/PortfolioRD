@@ -51,10 +51,11 @@ const font = {
                                     window.location.href = "https://www.linkedin.com/in/riteshdafale/"
                                 }}><abbr title='linkedin'><i class="fa-brands fa-linkedin iconSize" ></i></abbr></p>
 
-                                <p role="button" className='mx-3' onClick={() => { window.location.href = "https://www.instagram.com/" }} ><i class="fa-brands fa-instagram iconSize"></i></p>
-                                <p role="button" onClick={() => { window.location.href = "https://riteshdafale-portfolio.netlify.app/" }} ><i class="fa-solid fa-globe iconSize"></i></p>
+                                <p role="button" className='mx-3' onClick={() => { window.location.href = "https://www.instagram.com/theriteshdafale/" }} ><i class="fa-brands fa-instagram iconSize"></i></p>
+
+                                <p role="button" onClick={() => { window.location.href = "https://riteshdafale.github.io/PortfolioRD/" }} ><i class="fa-solid fa-globe iconSize"></i></p>
                                 <p role="button" className='mx-3' onClick={() => {
-                                    window.location.href = "https://github.com/RiteshDafale/RiteshPortfolio.github.io"
+                                    window.location.href = "https://github.com/RiteshDafale/"
                                 }}><i class="fa-brands fa-github iconSize"></i></p>
                                 </div>
           </div>

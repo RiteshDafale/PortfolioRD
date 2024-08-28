@@ -2,7 +2,6 @@ import React from 'react'
 import mypic from '../component/Photos/Myphoto.jpg'
 import EyeClinicHomePage from '../component/Photos/Cinic-Home-page.jpg'
 import '../component/First.css'
-import { ReactTyped } from "react-typed";
 import { useNavigate } from 'react-router-dom';
 import Navbar from './navbar/Navbar';
 
@@ -28,7 +27,6 @@ export default function First() {
                         </div>
                     </div>
                     {/* Intro complete */}
-
                 </div>
                 <div className=" container skills " id="education">
                     {/* <Navbar id = {"skills"} /> */}
@@ -41,7 +39,6 @@ export default function First() {
                                 <p className='lead fst-italic clgpara '>Prof. Ram Meghe Institute of Technology & Research, Amravati.</p>
                                 <p>I completed my Master of Computer Applications (MCA) in 2024 . My coursework emphasized advanced programming, software development, and project management, providing a strong foundation for my career in IT.</p>
                             </div>
-                            <a href="#" class="cd-top text-replace js-cd-top" id="myBtn">Top</a>
                             <script>
                                 var offset = 300, // browser window scroll (in pixels) after which the "back to top" link is shown
                                 offsetOpacity = 1200, //browser window scroll (in pixels) after which the "back to top" link opacity is reduced

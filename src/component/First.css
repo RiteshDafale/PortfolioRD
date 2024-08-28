@@ -10,7 +10,6 @@
     width: 300px;
     height: 300px;
     object-fit: cover;
-
 }
 
 .firstcol {
@@ -28,28 +27,26 @@
 
 .iconSize {
     font-size: 23px;
-    ;
 }
 
 .projectHeadline {
     text-decoration: overline;
 }
-.project{
+
+.project {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
-.borderRadius{
+
+.borderRadius {
     width: 58px;
     border-radius: 12px
 }
+
 .clinicCard {
     width: 340px;
-}
-
-.project {
-    /* height: fit-content !important; */
 }
 
 .roundedskills {
@@ -61,10 +58,13 @@
     color: white !important;
     cursor: pointer;
 }
-  .clgpara{
-    font-size: 1rem;;
-  }
-.Leftline{
+
+.clgpara {
+    font-size: 1rem;
+    ;
+}
+
+.Leftline {
     border-left: 5px white;
     border-radius: 14px;
     border-left-style: dashed;
@@ -73,56 +73,53 @@
     padding: 13px;
 }
 
-
-
-.bg-secondary{
+.bg-secondary {
     background-color: rgb(68, 63, 63);
 }
 
-.snakebtn{
+.snakebtn {
     margin-top: 14px;
 }
-.clinicbtn{
+
+.clinicbtn {
     margin-bottom: 13px;
 }
 
-.clinicPara{
-    /* margin-top: 2px; */
+.clinicPara {
     margin-bottom: 22px;
 }
-.rowdiv{
+
+.rowdiv {
     display: flex;
     justify-content: space-evenly;
 }
-.project >  .btn{
-    margin-top:30px;
+
+.project>.btn {
+    margin-top: 30px;
 }
-/*  */
-.Amazonbtn{
+
+.Amazonbtn {
     position: relative;
     top: 0px;
 }
-.snakeFormat{
-    border:2px solid red;
+
+.snakeFormat {
+    border: 2px solid red;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.snake{
+.snake {
     padding-bottom: 16px;
 }
 
-
 /* skill animated progress bar */
-
 .progress-bar-container:not(:last-child) {
     margin-bottom: 50px;
 
 }
 
-/* Styling the h2 tag by giving color, 
-letter spacing, font-size etc.*/
 .progress-bar-container h2 {
     font-family: Arial, Helvetica, sans-serif;
     color: #eee;
@@ -130,11 +127,11 @@ letter spacing, font-size etc.*/
     font-size: 1rem;
 }
 
-.persentFont{
-    font-size: 9px;;
+.persentFont {
+    font-size: 9px;
+    ;
 }
-/* Styling the border and box
-effect of the progress bar*/
+
 .progress-bar {
     width: 800px;
     height: 12px;
@@ -144,8 +141,6 @@ effect of the progress bar*/
     box-shadow: 0 0 2px rgb(245, 159, 0);
 }
 
-/* Stylingthe background color of each 
-animation and border radius */
 .percentage {
     display: block;
     height: 100%;
@@ -163,67 +158,43 @@ animation and border radius */
 .html {
     width: 100%;
 }
+
 .css {
     width: 100%;
 }
+
 .js {
     width: 67%;
 }
+
 .bootstrap {
     width: 70%;
 }
 
-.corejava{
-    width:90%;
+.corejava {
+    width: 90%;
 }
-.mvc{
-    width:70%;
+
+.mvc {
+    width: 70%;
 }
-.boot{
-    width:60%;
+
+.boot {
+    width: 60%;
 }
-.oracle{
-    width:79%;
+
+.oracle {
+    width: 79%;
 }
-.progressContent{
+
+.progressContent {
     display: flex;
     justify-content: space-between;
 }
-/* ===================================================== */
-
-.cd-top--is-visible { 
-    visibility: visible;
-    opacity: 1;
-}
-
-.cd-top--fade-out { 
-    opacity: .5;
-  }
-
-  .cd-top{
-   position: sticky;
-}
-#mybtn{
-    display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: red; /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
-}
-
 
 /* media query responsive */
 @media only screen and (max-width: 600px) {
     .firstrow {
-        /* border:2px solid red; */
         font-size: 12px;
         display: flex;
         flex-direction: column;
@@ -257,7 +228,6 @@ animation and border radius */
         display: flex;
         justify-content: flex-start;
         margin-top: -24px !important;
-
     }
 
     .selfnameH {
@@ -286,30 +256,26 @@ animation and border radius */
     .amazon {
         margin-top: 22px;
         margin-bottom: 22px;
-
     }
 
     .rowdiv {
         background-color: transparent !important;
-        
-    }
-    .row{
-        margin-right: calc(-.0* var(--bs-gutter-x)) !important;
-    margin-left: calc(-.0* var(--bs-gutter)) !important;
     }
 
     .contentAbout {
         width: max-content;
-        margin-left:0px !important;
+        margin-left: 0px !important;
     }
 
-     .aboutHead{
+    .aboutHead {
         text-align: justify;
-     }
+    }
+
     .para {
         font-size: 1rem;
     }
-    .sm-font{
+
+    .sm-font {
         font-size: 0.95rem;
         text-align: justify !important;
     }
@@ -322,21 +288,19 @@ animation and border radius */
         font-size: 0.95rem;
         margin-right: 0rem !important;
     }
-
-   .swing{
-    margin-left: 84px !important;
-   }
-   .para{
-    margin-top: 25px;
- }
- .contactForm{
-    width:100% !important;
- }
-}
-
-/* Media query for Ipads  */
-@media  (min-width:576px) and (max-width: 984px){
-     .para{
+    .swing {
+        margin-left: 84px !important;
+    }
+    .para {
         margin-top: 25px;
-     }
+    }
+    .contactForm {
+        width: 100% !important;
+    }
+}
+/* Media query for Ipads  */
+@media (min-width:576px) and (max-width: 984px) {
+    .para {
+        margin-top: 25px;
+    }
 }

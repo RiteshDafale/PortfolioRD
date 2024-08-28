@@ -14,7 +14,7 @@ function Clinic() {
         <div className="container">
           <div className="video d-flex flex-column justify-content-center align-items-center " >
             <h4 className='text-white mt-4 text-decoration-underline'>Clinic Management System</h4>
-            <video src={video} className="object-fit-contain mt-3" controls></video>
+            <video src={video} className="object-fit-contain mt-3" controls ></video>
           </div>
           <hr />
           <div className="text  d-flex justify-content-center">
@@ -29,11 +29,11 @@ function Clinic() {
                   Through this venture, I refined my skills in Java programming and database
                   management, accruing valuable experience in crafting practical applcations for
                   real-world scenarios.</p>
-                <hr />
+                <hr/>
                 <div className="links   d-flex justify-content-between ">
                   <div className="first">
                     <a href="https://github.com/RiteshDafale/Clinic-Management-Project" className="githublink text-start mx-2 " > Github  </a>
-                    <a href=" https://lnkd.in/gXana8eQ " className="githublink text-start"> Linkedin  </a>
+                    <a href=" https://www.linkedin.com/posts/riteshdafale_im-happy-to-share-this-clinic-management-activity-7111003182431965185-ci96?utm_source=share&utm_medium=member_desktop " className="githublink text-start"> Linkedin  </a>
                   </div>
                   <div className="last">
                   <a href="/PortfolioRD" className="githublink "> <i class="fa-solid fa-arrow-left-long"></i>  </a>            
@@ -44,7 +44,7 @@ function Clinic() {
           </div>
         </div>
       </div>
-        <Footer/> 
+      <Footer/> 
     </div>
   )
 }
