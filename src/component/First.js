@@ -1,20 +1,25 @@
-import React from 'react'
+import React, { useEffect,memo } from 'react'
 import mypic from '../component/Photos/Myphoto.jpg'
 import EyeClinicHomePage from '../component/Photos/Cinic-Home-page.jpg'
 import '../component/First.css'
 import { useNavigate } from 'react-router-dom';
 import Navbar from './navbar/Navbar';
+import { toast, ToastContainer } from 'react-toastify';
 
-export default function First() {
-        
-    
+ function First() {
+    // const notify = () => toast("Wow so easy!");
+
+    useEffect(() => {
+        //    alert("first time only before loading page") 
+        toast.info("Welcome to Ritesh Dafale's Portfolio! Explore my work and projects.")
+    }, [])
     const navigate = useNavigate();
     return (
         <div className=''>
-            <div className="container-fluid text-center bg-dark w-100  " id="intro">
-                <div className="firstSession w-100">
-                    <div class="row  firstrow ">
-                        <div class="col  mt-5  image d-flex  justify-content-center w-25  photocol">
+            <div className="  container-fluid text-center bg-dark w-100  " id="intro">
+                <div className=" firstSession w-100">
+                    <div class="  row  firstrow ">
+                        <div class=" border  border-dark col  mt-5  image d-flex  justify-content-center w-25  photocol">
                             <div className='  innerPhotoImage ' >
                                 <img src={mypic} alt='Some problem' className='photo mt-3 rounded-circle'></img>
                             </div>
@@ -26,12 +31,11 @@ export default function First() {
 
                         </div>
                     </div>
-                    {/* Intro complete */}
                 </div>
                 <div className=" container skills " id="education">
                     {/* <Navbar id = {"skills"} /> */}
                     <div className="row education   mt-5 ">
-                        <h3 className='text-white'>Education</h3>
+                        <h3 className='text-white text-decoration-underline'>Education</h3>
                         <div className="col-lg-6 mt-3 text-white text-start maincontent">
                             <div className="Leftline" >
                                 <h5 className='mt-3 '>Master of Computer Application</h5>
@@ -56,7 +60,7 @@ export default function First() {
                     </div>
                     <div className="row">
                         <div className="row skills  text-white  mt-5 ">
-                            <h3 className=''>Skills</h3>
+                            <h3 className='text-decoration-underline'>Skills</h3>
                             <div className="col-lg-6  ">
                                 <div class="progress-bar-container mt-4  ">
                                     <div className="progressContent">
@@ -64,7 +68,7 @@ export default function First() {
                                     </div>
                                     <div class="progress-bar w-auto">
                                         <span class="percentage html progressheight d-flex align-items-center flex-row-reverse pe-1  ">
-                                            <div className='persentFont'>100%</div>
+                                            <div className='persentFont'>80%</div>
                                         </span>
                                     </div>
                                 </div>
@@ -72,7 +76,7 @@ export default function First() {
                                     <h2 className=' text-start barFont'>CSS</h2>
                                     <div class="progress-bar w-auto">
                                         <span class="percentage css progressheight d-flex align-items-center flex-row-reverse pe-1 ">
-                                            <div className='persentFont'>100%</div>
+                                            <div className='persentFont'>80%</div>
                                         </span>
                                     </div>
                                 </div>
@@ -132,42 +136,48 @@ export default function First() {
                 </div>
                 <div className="  project mt-5" id="projects">
                     <div className="row rowdiv  ">
-                        <h3 className='text-white mt-4 mainhead' >Projects</h3>
-                        <div className="col-lg-3 col-md-3   text-white   mt-3 project p-2 shadow bg-secondary clinicMargin" >
-                            <h5 className='mt-3 text-decoration-underline  '>Clinic Management System</h5>
-                            <div className="skills d-flex mt-4 ">
-                                <p className=' bg-primary borderRadius  '>Java</p>
-                                <p className=' bg-primary borderRadius ms-3'>Swing</p>
-                            </div>
-                            <p className='text-center para sm-font '>The Clinic Management Project is a patient management system initially developed using Java and MySQL Workbench. It efficiently stores patient data in a database</p>
+                        <h3 className='text-white mt-4 mainhead text-decoration-underline ' >Projects</h3>
+                        <div className="col-lg-3    text-white   clinicMargin mt-3" >
+                            <div className="innerContent bg-secondary">
+                                <h5 className='mt-3 text-decoration-underline  '>Clinic Management System</h5>
+                                <div className="skills d-flex mt-4 ">
+                                    <p className=' bg-primary borderRadius  '>Java</p>
+                                    <p className=' bg-primary borderRadius ms-3'>Swing</p>
+                                </div>
+                                <p className=' para '>The Clinic Management Project is a patient management system initially developed using Java and MySQL Workbench. It efficiently stores patient data in a database</p>
 
-                            < button
-                                className='btn btn-dark rounded-3 clinicbtn '
-                                onClick={() => navigate("/clinic")}>Explore More
-                            </button>
-                        </div>
-                        <div className="col-lg-3 col-md-3  text-white    project amazon mt-3 bg-secondary">
-                            <h5 className='mt-3 pt-2 text-decoration-underline pb-2  '>Amazon Clone</h5>
-                            <div className="skills d-flex mt-4 ">
-                                <p className=' bg-primary borderRadius '>HTML</p>
-                                <p className=' bg-primary borderRadius mx-3'>CSS</p>
-                                <p className=' bg-primary borderRadius'>JS</p>
+                                < button
+                                    className='btn btn-dark rounded-3 clinicbtn '
+                                    onClick={() => navigate("/clinic")}>Explore More
+                                </button>
                             </div>
-                            <p className='text-center sm-font'>While learning HTML, CSS, and JavaScript, I am recreating Amazon’s e-commerce platform. This practice project allows me to apply and enhance my web development skills.</p>
-                            <button className='btn btn-dark rounded-3 mb-2 Amazonbtn'  onClick={() => navigate("/amazon")}> Explore More</button>
                         </div>
-                        <div className="col-lg-3 col-md-3   text-white p-2 mt-3  project bg-secondary snake ">
+                        <div className="col-lg-3   text-white     amazon mt-3 ">
+                            <div className="innerContent bg-secondary">
+                                <h5 className='mt-3 pt-2 text-decoration-underline pb-2  '>Amazon Clone</h5>
+                                <div className="skills d-flex mt-4 ">
+                                    <p className=' bg-primary borderRadius '>HTML</p>
+                                    <p className=' bg-primary borderRadius mx-3'>CSS</p>
+                                    <p className=' bg-primary borderRadius'>JS</p>
+
+                                </div>
+                                <p className='para'>While learning HTML, CSS, and JavaScript, I am recreating Amazon’s e-commerce platform. This practice project allows me to apply and enhance my web development skills.</p>
+                                <button className='btn btn-dark rounded-3 mb-2 Amazonbtn' onClick={() => navigate("/amazon")}> Explore More</button>
+                            </div>
+                        </div>
+                        <div className="col-lg-3    text-white  snake mt-3 ">
+                        <div className="innerContent bg-secondary ">
                             <h5 className='mt-3 text-decoration-underline  '>Snake Game</h5>
                             <div className="skills d-flex mt-4 ">
                                 <p className=' bg-primary borderRadius'>Java</p>
                                 <p className=' bg-primary borderRadius ms-3 '>Swing</p>
                             </div>
                             <div className='snakePara'>
-                                <p className='text-center para sm-font '>During my Java programming for fun , I attempted to create a Snake game using Swing and AWT, snake is controlled by left, right, and up buttons, with key event handling </p>
-                                <button className='btn btn-dark rounded-3  btn'  onClick={() => navigate("/snake")}> Explore More</button>
+                                <p className=' para  '>During my Java programming for fun , I attempted to create a Snake game using Swing and AWT, snake is controlled by left, right, and up buttons, with key event handling </p>
+                                <button className='btn btn-dark rounded-3  clinicbtn' onClick={() => navigate("/snake")}> Explore More</button>
+                            </div>
                             </div>
                         </div>
-                        {/* Project complete */}
                     </div>
                 </div>
                 <div className="container border border-white mt-5 bg-white" id="contact">
@@ -226,3 +236,5 @@ export default function First() {
         </div>
     )
 }
+
+export default memo(First)
