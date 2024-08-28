@@ -18,3 +18,10 @@
 .btnColor{
     background-color: white;
 }
+
+.logo{
+    background-color: gray;
+    border-radius: 21px;
+    padding: 5px;
+    font-family: cursive;
+}
