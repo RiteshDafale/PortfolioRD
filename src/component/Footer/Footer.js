@@ -49,7 +49,7 @@ const font = {
            <div className='d-flex justify-content-center'>
            <p role="button" onClick={() => {
                                     window.location.href = "https://www.linkedin.com/in/riteshdafale/"
-                                }}><abbr title='linkedin'><i class="fa-brands fa-linkedin iconSize" ></i></abbr></p>
+                                }}><i class="fa-brands fa-linkedin iconSize" ></i></p>
 
                                 <p role="button" className='mx-3' onClick={() => { window.location.href = "https://www.instagram.com/theriteshdafale/" }} ><i class="fa-brands fa-instagram iconSize"></i></p>
 

@@ -3,9 +3,14 @@ import Navbar from '../navbar/Navbar'
 import amazon from '../Photos/Amazon-video.mp4'
 import '../Projects/clinic.css'
 import Footer from '../Footer/Footer'
+import { useEffect } from 'react'
 
 
 function Amazon() {
+  useEffect(() => {
+    document.title="Amazon Clone"  
+  }, [])
+  
   return (
     <div>
       <Navbar />

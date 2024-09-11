@@ -1,39 +1,77 @@
-import React, { useEffect,memo } from 'react'
+import React, { useEffect, memo, useState } from 'react'
 import mypic from '../component/Photos/Myphoto.jpg'
 import EyeClinicHomePage from '../component/Photos/Cinic-Home-page.jpg'
 import '../component/First.css'
 import { useNavigate } from 'react-router-dom';
 import Navbar from './navbar/Navbar';
 import { toast, ToastContainer } from 'react-toastify';
+import axios from 'axios';
+import baseurl from './api/baseurl';
 
- function First() {
-    // const notify = () => toast("Wow so easy!");
-
+function First() {
     useEffect(() => {
-        //    alert("first time only before loading page") 
         toast.info("Welcome to Ritesh Dafale's Portfolio! Explore my work and projects.")
+        document.title="Ritesh Portfolio"
     }, [])
+
+    const [contact, setcontact] = useState([]);
+    const [name, setname] = useState("");
+
+    const formHandling = (e) => {
+        e.preventDefault();
+        console.log(contact)
+        sentDetails(contact);
+    }
+
+    const sentDetails = (data) => {
+        // axios.post(`${baseurl}/addcontact`, data).then(   // not working 404 error
+        axios.post("http://localhost:1303/addcontact", data).then(   // dout in data
+            (Response) => {
+                toast.success(`Thank you, ${name} ! We\'ll  be in touch soon`, {
+                    position: "top-center",
+                    autoClose:2500,
+                    hideProgressBar: true,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: 0,
+                    theme: "light",
+                    className: "toast-message",
+                   
+                });
+
+            },
+            (error) => {                toast.error('some issue with data', {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: 0,
+                    theme: "light",                 
+                });
+            }
+        )
+    }
     const navigate = useNavigate();
     return (
         <div className=''>
             <div className="  container-fluid text-center bg-dark w-100  " id="intro">
                 <div className=" firstSession w-100">
-                    <div class="  row  firstrow ">
-                        <div class=" border  border-dark col  mt-5  image d-flex  justify-content-center w-25  photocol">
+                    <div className="  row  firstrow ">
+                        <div className=" border  border-dark col  mt-5  image d-flex  justify-content-center w-25  photocol">
                             <div className='  innerPhotoImage ' >
                                 <img src={mypic} alt='Some problem' className='photo mt-3 rounded-circle'></img>
                             </div>
                         </div>
-                        <div class="col mt-5   position-relative w-75 contentcol  ">
-
+                        <div className="col mt-5   position-relative w-75 contentcol  ">
                             <h3 className='text-white mt-5 pt-5 me-5 pe-5  selfnameH'>Ritesh Dafale    </h3>
                             <p className='text-white me-5 text-start intro'>I'm an MCA graduate from 2024, passionate about programming and eager to start my career as a Java Developer or Frontend Developer, with strong skills in Java 8, Spring Boot, Spring MVC, and React.</p>
-
                         </div>
                     </div>
                 </div>
                 <div className=" container skills " id="education">
-                    {/* <Navbar id = {"skills"} /> */}
                     <div className="row education   mt-5 ">
                         <h3 className='text-white text-decoration-underline'>Education</h3>
                         <div className="col-lg-6 mt-3 text-white text-start maincontent">
@@ -62,70 +100,70 @@ import { toast, ToastContainer } from 'react-toastify';
                         <div className="row skills  text-white  mt-5 ">
                             <h3 className='text-decoration-underline'>Skills</h3>
                             <div className="col-lg-6  ">
-                                <div class="progress-bar-container mt-4  ">
+                                <div className="progress-bar-container mt-4  ">
                                     <div className="progressContent">
                                         <h2 className=' text-start barFont'>HTML</h2>
                                     </div>
-                                    <div class="progress-bar w-auto">
-                                        <span class="percentage html progressheight d-flex align-items-center flex-row-reverse pe-1  ">
+                                    <div className="progress-bar w-auto">
+                                        <span className="percentage html progressheight d-flex align-items-center flex-row-reverse pe-1  ">
                                             <div className='persentFont'>80%</div>
                                         </span>
                                     </div>
                                 </div>
-                                <div class="progress-bar-container  ">
+                                <div className="progress-bar-container  ">
                                     <h2 className=' text-start barFont'>CSS</h2>
-                                    <div class="progress-bar w-auto">
-                                        <span class="percentage css progressheight d-flex align-items-center flex-row-reverse pe-1 ">
+                                    <div className="progress-bar w-auto">
+                                        <span className="percentage css progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>80%</div>
                                         </span>
                                     </div>
                                 </div>
-                                <div class="progress-bar-container barFont ">
+                                <div className="progress-bar-container barFont ">
                                     <h2 className=' text-start'>Javascript</h2>
-                                    <div class="progress-bar w-auto">
-                                        <span class="percentage js progressheight d-flex align-items-center flex-row-reverse pe-1 ">
+                                    <div className="progress-bar w-auto">
+                                        <span className="percentage js progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>67%</div>
                                         </span>
                                     </div>
                                 </div>
-                                <div class="progress-bar-container  ">
+                                <div className="progress-bar-container  ">
                                     <h2 className=' text-start barFont'>Bootstrap</h2>
-                                    <div class="progress-bar w-auto">
-                                        <span class="percentage bootstrap progressheight d-flex align-items-center flex-row-reverse pe-1 ">
+                                    <div className="progress-bar w-auto">
+                                        <span className="percentage bootstrap progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>70%</div>
                                         </span>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-6  ">
-                                <div class="progress-bar-container mt-4  ">
-                                    <h2 className=' text-start barFont'>J2EE</h2>
-                                    <div class="progress-bar w-auto">
-                                        <span class="percentage corejava progressheight d-flex align-items-center flex-row-reverse pe-1 ">
+                                <div className="progress-bar-container mt-4  ">
+                                    <h2 className=' text-start barFont'>Core Java</h2>
+                                    <div className="progress-bar w-auto">
+                                        <span className="percentage corejava progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>90%</div>
                                         </span>
                                     </div>
                                 </div>
-                                <div class="progress-bar-container  ">
+                                <div className="progress-bar-container  ">
                                     <h2 className=' text-start barFont'>Spring MVC</h2>
-                                    <div class="progress-bar w-auto">
-                                        <span class="percentage mvc progressheight d-flex align-items-center flex-row-reverse pe-1 ">
+                                    <div className="progress-bar w-auto">
+                                        <span className="percentage mvc progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>70%</div>
                                         </span>
                                     </div>
                                 </div>
-                                <div class="progress-bar-container barFont ">
+                                <div className="progress-bar-container barFont ">
                                     <h2 className=' text-start'>Spring Boot</h2>
-                                    <div class="progress-bar w-auto">
-                                        <span class="percentage boot progressheight d-flex align-items-center flex-row-reverse pe-1 ">
+                                    <div className="progress-bar w-auto">
+                                        <span className="percentage boot progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>60%</div>
                                         </span>
                                     </div>
                                 </div>
-                                <div class="progress-bar-container  ">
+                                <div className="progress-bar-container  ">
                                     <h2 className=' text-start barFont'>Oracle</h2>
-                                    <div class="progress-bar w-auto">
-                                        <span class="percentage oracle progressheight d-flex align-items-center flex-row-reverse pe-1 ">
+                                    <div className="progress-bar w-auto">
+                                        <span className="percentage oracle progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>79%</div>
                                         </span>
                                     </div>
@@ -166,16 +204,16 @@ import { toast, ToastContainer } from 'react-toastify';
                             </div>
                         </div>
                         <div className="col-lg-3    text-white  snake mt-3 ">
-                        <div className="innerContent bg-secondary ">
-                            <h5 className='mt-3 text-decoration-underline  '>Snake Game</h5>
-                            <div className="skills d-flex mt-4 ">
-                                <p className=' bg-primary borderRadius'>Java</p>
-                                <p className=' bg-primary borderRadius ms-3 '>Swing</p>
-                            </div>
-                            <div className='snakePara'>
-                                <p className=' para  '>During my Java programming for fun , I attempted to create a Snake game using Swing and AWT, snake is controlled by left, right, and up buttons, with key event handling </p>
-                                <button className='btn btn-dark rounded-3  clinicbtn' onClick={() => navigate("/snake")}> Explore More</button>
-                            </div>
+                            <div className="innerContent bg-secondary ">
+                                <h5 className='mt-3 text-decoration-underline  '>Snake Game</h5>
+                                <div className="skills d-flex mt-4 ">
+                                    <p className=' bg-primary borderRadius'>Java</p>
+                                    <p className=' bg-primary borderRadius ms-3 '>Swing</p>
+                                </div>
+                                <div className='snakePara'>
+                                    <p className=' para  '>During my Java programming for fun , I attempted to create a Snake game using Swing and AWT, snake is controlled by left, right, and up buttons, with key event handling </p>
+                                    <button className='btn btn-dark rounded-3  clinicbtn' onClick={() => navigate("/snake")}> Explore More</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -185,30 +223,71 @@ import { toast, ToastContainer } from 'react-toastify';
                         <h3 className='mt-3'>Contact form</h3>
                         <p>Get in touch with us! We'd love to hear from you.</p>
                     </div>
+                    {/* CONTACT FORM CODING  */}
                     <div className=" container border w-50 mt-3 bg-dark contactForm text-white mb-3" >
-                        <form class="row g-3 ">
-                            <div class="col-md-6">
-                                {/* <label for="inputEmail4" class="form-label">Email</label> */}
-                                <input type="text" placeholder='First Name' class="form-control mt-4" id="inputEmail4" />
+                        <form className="row g-3 " onSubmit={formHandling}>
+                            <div className="col-md-6">
+                                {/* <label for="inputEmail4" className="form-label">Email</label> */}
+                                <input type="text" required placeholder='First Name' className="form-control mt-4" id="firstname"
+                                    onChange={(e) => {
+                                        setname(e.target.value);
+                                        setcontact({
+                                            ...contact,
+                                            firstname: e.target.value
+                                        })
+
+
+                                    }}
+                                />
                             </div>
-                            <div class="col-md-6">
-                                {/* <label for="inputPassword4" class="form-label">Password</label> */}
-                                <input type="text" placeholder='Last Name' class="form-control mt-4" id="inputPassword4" />
+                            <div className="col-md-6">
+                                {/* <label for="inputPassword4" className="form-label">Password</label> */}
+                                <input type="text" required placeholder='Last Name' className="form-control mt-4" id="lastname"
+                                    onChange={(e) => {
+                                        setcontact({
+                                            ...contact,
+                                            lastname: e.target.value
+                                        })
+                                    }}
+                                />
                             </div>
-                            <div class="col-12">
-                                {/* <label for="inputAddress" class="form-label">Address</label> */}
-                                <input type="email" class="form-control mt-3" id="inputAddress" placeholder="Email Address" />
+                            <div className="col-12">
+                                {/* <label for="inputAddress" className="form-label">Address</label> */}
+                                <input type="text" required className="form-control mt-3" id="email" placeholder="Email Address"
+                                    onChange={(e) => {
+                                        setcontact({
+                                            ...contact,
+                                            email: e.target.value
+                                        })
+                                    }}
+                                />
                             </div>
-                            <div class="col-12">
-                                {/* <label for="inputAddress" class="form-label">Address</label> */}
-                                <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Subject" />
+                            <div className="col-12">
+                                {/* <label for="inputAddress" className="form-label">Address</label> */}
+                                <input type="text" required className="form-control mt-3" id="inputAddress" placeholder="Subject"
+                                    onChange={(e) => {
+                                        setcontact({
+                                            ...contact,
+                                            subject: e.target.value
+                                        })
+                                    }}
+                                />
                             </div>
-                            <div class="col-12">
-                                {/* <label for="inputAddress" class="form-label">Address</label> */}
-                                <textarea class="form-control mt-3" placeholder="Message ..." id="floatingTextarea"></textarea>
+                            <div className="col-12">
+                                {/* <label for="inputAddress" className="form-label">Address</label> */}
+                                <textarea required className="form-control mt-3" placeholder="Message ..." id="message"
+                                    onChange={(e) => {
+
+                                        setcontact({
+                                            ...contact,
+                                            message: e.target.value
+                                        })
+                                    }}
+                                ></textarea>
                             </div>
-                            <div class="col-12 d-flex justify-content-center align-items-center ">
-                                <button type="submit" class="btn btn-primary mb-2 mb-3 ">Sign in</button>
+                            <div className="col-12 d-flex justify-content-center align-items-center ">
+                                <button type="submit" className="btn btn-primary mb-2 mb-3 " >Sign in</button>
+                                <button type="reset" className="btn btn-primary mb-2 mb-3 mx-2 " >clear</button>
                             </div>
                         </form>
 
@@ -221,7 +300,7 @@ import { toast, ToastContainer } from 'react-toastify';
                             <p className='font-monospace.'>Name : Ritesh Dafale</p>
                             <p className=''>Contact no. : 7057746698</p>
                             <p className=''>Email : ritesh.dafale13@gmail.com</p>
-                            <p className=''>Website : www.ritesh.com</p>
+                            <p className=''>Website :https://riteshdafale.github.io/PortfolioRD/</p>
                             <p className=''>City : Nagpur , Maharashtra</p>
                         </div>
                     </div>

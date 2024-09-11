@@ -1,4 +1,4 @@
-import React,{memo} from 'react'
+import React,{memo,useEffect} from 'react'
 import Navbar from '../navbar/Navbar'
 import video from '../Photos/Clinic/clinic_managemen-video.mp4'
 import '../Projects/clinic.css'
@@ -6,9 +6,12 @@ import Footer from '../Footer/Footer'
 import { useNavigate } from 'react-router-dom'
 import '/CodeMate_Internship/HTML-CSS//Responsive/Portfolio/ritesh_portfolio/src/App.css'
 
-// D:\CodeMate_Internship\HTML-CSS\Responsive\Portfolio\ritesh_portfolio\src\App.css
 
 function Clinic() {
+
+  useEffect(() => {
+    document.title="Clinic Management System"  
+  }, [])
   const navigate = useNavigate();
   return (
     <div className="app">

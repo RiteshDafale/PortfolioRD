@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../navbar/Navbar'
 import snake from '../Photos/snake-game-video.mp4'
 import Footer from '../Footer/Footer'
 
 function Snake() {
+  useEffect(() => {
+   document.title="Snake Game"
+  
+  
+  }, [])
+  
   return (
     <div>
       <Navbar />
