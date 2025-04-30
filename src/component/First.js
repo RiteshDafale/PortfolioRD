@@ -49,10 +49,13 @@ function First() {
                         from: 'center'
                     })
                 },
-                { to: 0 },
+                { to: stagger([1, .25], {
+                    modifier: v => `0 0 ${v *20}px ${v * 3}px currentColor`,
+                    from: 'center'
+                }) },
             ],
             delay: stagger(100, { from: 'center' }),
-            loop: true
+            loop: false
         });
         animate('.introshadow', {
             boxShadow: [
@@ -69,7 +72,7 @@ function First() {
                  },
             ],
             delay: stagger(500, { from: 'center' }),
-            loop: false
+            loop: true
         });
 
 
@@ -91,12 +94,6 @@ function First() {
             loop: true,
         });
     }, [])
-
-    const letters = nameText.split('').map((char, i) => (
-        <span key={i} style={{ display: 'inline-block' }}>
-            {char === ' ' ? '\u00A0' : char}
-        </span>
-    ));
 
     const [contact, setcontact] = useState([]);
     const [name, setname] = useState("");
