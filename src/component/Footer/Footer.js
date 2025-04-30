@@ -53,7 +53,10 @@ const font = {
 
                                 <p role="button" className='mx-3' onClick={() => { window.location.href = "https://www.instagram.com/theriteshdafale/" }} ><i class="fa-brands fa-instagram iconSize"></i></p>
 
-                                <p role="button" onClick={() => { window.location.href = "https://riteshdafale.github.io/PortfolioRD/" }} ><i class="fa-solid fa-globe iconSize"></i></p>
+                                <p role="button" onClick={() => { window.location.href = "https://http://wa.me/+917057746698" }} ><i class="fa-solid fa-globe iconSize"></i></p>
+
+
+
                                 <p role="button" className='mx-3' onClick={() => {
                                     window.location.href = "https://github.com/RiteshDafale/"
                                 }}><i class="fa-brands fa-github iconSize"></i></p>

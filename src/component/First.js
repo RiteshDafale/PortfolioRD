@@ -1,4 +1,4 @@
-import React, { useEffect, memo, useState } from 'react'
+import React, { useEffect, memo, useState, useRef } from 'react'
 import mypic from '../component/Photos/Myphoto.jpg'
 import EyeClinicHomePage from '../component/Photos/Cinic-Home-page.jpg'
 import '../component/First.css'
@@ -6,16 +6,101 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from './navbar/Navbar';
 import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
-import baseurl from './api/baseurl';
+import { animate, stagger, createDraggable, utils } from 'animejs';
 
 function First() {
+    const headingRef = useRef(null);
+    const nameText = 'Ritesh Dafale';
+
     useEffect(() => {
         toast.info("Welcome to Ritesh Dafale's Portfolio! Explore my work and projects.")
-        document.title="Ritesh Portfolio"
+        document.title = "Ritesh Portfolio"
+
+        const container = document.querySelector('.grid');
+        const draggableElement = document.querySelector('.Photo');
+
+        if (container && draggableElement) {
+            createDraggable('.Photo', {
+                // container: '.grid',
+                // containerFriction: 0,
+            });
+        }
+        
+        const margin = 100; // Optional margin from the edges
+
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+      
+        const xMin = -windowWidth / 1 + margin;
+        const xMax = windowWidth / 1 - margin;
+      
+        const yMin = -windowHeight / 1 + margin;
+        const yMax = windowHeight /1 - margin;
+
+        createDraggable('.Photo', {
+            modifier: utils.wrap(xMin,  xMax), // Global to both x and y
+            x: { modifier: utils.wrap(yMin,yMax) }, // Specific to x 
+        });
+        animate('.square', {
+            boxShadow: [
+                {
+                    to: stagger([1, .25], {
+                        modifier: v => `0 0 ${v *60}px ${v * 5}px currentColor`,
+                        from: 'center'
+                    })
+                },
+                { to: 0 },
+            ],
+            delay: stagger(100, { from: 'center' }),
+            loop: true
+        });
+        animate('.introshadow', {
+            boxShadow: [
+                {
+                    to: stagger([1, .25], {
+                        modifier: v => `0 0 ${v *35}px ${v * 5}px red`,
+                        from: 'first'
+                    })
+                },
+                { to: stagger([1, .25], {
+                    modifier: v => `0 0 ${v *15}px ${v * 3}px blue`,
+                    from: 'last'
+                })
+                 },
+            ],
+            delay: stagger(500, { from: 'center' }),
+            loop: false
+        });
+
+
+
+        if (!headingRef.current) return;
+        animate(headingRef.current.querySelectorAll('span'), {
+            y: [
+                { to: '-1.75rem', ease: 'inBack', duration: 500 },
+                { to: 0, ease: 'inBack', duration: 500, delay: 100 },
+            ],
+            rotate: {
+                from: '-1turn',
+                delay: 0,
+            },
+            delay: (_, i) => i * 50,
+            ease: 'inBack',
+            //   ease: '',
+            loopDelay: 1000,
+            loop: true,
+        });
     }, [])
+
+    const letters = nameText.split('').map((char, i) => (
+        <span key={i} style={{ display: 'inline-block' }}>
+            {char === ' ' ? '\u00A0' : char}
+        </span>
+    ));
 
     const [contact, setcontact] = useState([]);
     const [name, setname] = useState("");
+
 
     const formHandling = (e) => {
         e.preventDefault();
@@ -29,7 +114,7 @@ function First() {
             (Response) => {
                 toast.success(`Thank you, ${name} ! We\'ll  be in touch soon`, {
                     position: "top-center",
-                    autoClose:2500,
+                    autoClose: 2500,
                     hideProgressBar: true,
                     closeOnClick: false,
                     pauseOnHover: true,
@@ -37,11 +122,11 @@ function First() {
                     progress: 0,
                     theme: "light",
                     className: "toast-message",
-                   
-                });
 
+                });
             },
-            (error) => {                toast.error('some issue with data', {
+            (error) => {
+                toast.error('Data issue. Please try again.', {
                     position: "top-center",
                     autoClose: 2000,
                     hideProgressBar: true,
@@ -49,7 +134,7 @@ function First() {
                     pauseOnHover: true,
                     draggable: true,
                     progress: 0,
-                    theme: "light",                 
+                    theme: "light",
                 });
             }
         )
@@ -62,18 +147,23 @@ function First() {
                     <div className="  row  firstrow ">
                         <div className=" border  border-dark col  mt-5  image d-flex  justify-content-center w-25  photocol">
                             <div className='  innerPhotoImage ' >
-                                <img src={mypic} alt='Some problem' className='photo mt-3 rounded-circle'></img>
+                                <img src={mypic} alt='Some problem' className='Photo draggable photo mt-3 rounded-circle'></img>
                             </div>
                         </div>
                         <div className="col mt-5   position-relative w-75 contentcol  ">
-                            <h3 className='text-white mt-5 pt-5 me-5 pe-5  selfnameH'>Ritesh Dafale    </h3>
-                            <p className='text-white me-5 text-start intro'>I'm an MCA graduate from 2024, passionate about programming and eager to start my career as a Java Developer or Frontend Developer, with strong skills in Java 8, Spring Boot, Spring MVC, and React.</p>
+                            <h3 ref={headingRef} style={{ display: 'flex', gap: '0.1rem' }} className='text-white my-5   '> Ritesh Dafale  </h3>
+                            <p className='text-white me-5 text-start intro introshadow p-3'>I'm an MCA graduate from 2024, passionate about programming and eager to start my career as a Java Developer or Frontend Developer, with strong skills in Java 8, Spring Boot, Spring MVC, and React.</p>
                         </div>
                     </div>
                 </div>
+
+
+
+
+
                 <div className=" container skills " id="education">
                     <div className="row education   mt-5 ">
-                        <h3 className='text-white text-decoration-underline'>Education</h3>
+                        <h3 className='text-white text-decoration-underline p-3 square'>Education</h3>
                         <div className="col-lg-6 mt-3 text-white text-start maincontent">
                             <div className="Leftline" >
                                 <h5 className='mt-3 '>Master of Computer Application</h5>
@@ -87,6 +177,7 @@ function First() {
                                 scrollDuration = 700;
                             </script>
                         </div>
+
                         <div className="col-lg-6 mt-3  text-white text-start" >
                             <div className="Leftline">
                                 <h5 className='mt-3 '>Bachelor of Computer Application</h5>
@@ -96,22 +187,26 @@ function First() {
                             </div>
                         </div>
                     </div>
+
+
+
+
                     <div className="row">
-                        <div className="row skills  text-white  mt-5 ">
-                            <h3 className='text-decoration-underline'>Skills</h3>
+                        <div className="row skills  text-white  mt-5  ">
+                            <h3 className='text-decoration-underline  p-3 square'>Skills</h3>
                             <div className="col-lg-6  ">
                                 <div className="progress-bar-container mt-4  ">
-                                    <div className="progressContent">
-                                        <h2 className=' text-start barFont'>HTML</h2>
+                                    <div className="progressContent ">
+                                        <h2 className=' text-start barFont  p-2'>HTML</h2>
                                     </div>
-                                    <div className="progress-bar w-auto">
-                                        <span className="percentage html progressheight d-flex align-items-center flex-row-reverse pe-1  ">
-                                            <div className='persentFont'>80%</div>
+                                    <div className="progress-bar w-auto ">
+                                        <span className="percentage html progressheight d-flex align-items-center flex-row-reverse pe-1   ">
+                                            <div className='persentFont fw-bolder '>80%</div>
                                         </span>
                                     </div>
                                 </div>
                                 <div className="progress-bar-container  ">
-                                    <h2 className=' text-start barFont'>CSS</h2>
+                                    <h2 className=' text-start barFont '>CSS</h2>
                                     <div className="progress-bar w-auto">
                                         <span className="percentage css progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>80%</div>
@@ -119,7 +214,7 @@ function First() {
                                     </div>
                                 </div>
                                 <div className="progress-bar-container barFont ">
-                                    <h2 className=' text-start'>Javascript</h2>
+                                    <h2 className=' text-start '>Javascript</h2>
                                     <div className="progress-bar w-auto">
                                         <span className="percentage js progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>67%</div>
@@ -127,7 +222,7 @@ function First() {
                                     </div>
                                 </div>
                                 <div className="progress-bar-container  ">
-                                    <h2 className=' text-start barFont'>Bootstrap</h2>
+                                    <h2 className=' text-start barFont '>Bootstrap</h2>
                                     <div className="progress-bar w-auto">
                                         <span className="percentage bootstrap progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>70%</div>
@@ -137,7 +232,7 @@ function First() {
                             </div>
                             <div className="col-lg-6  ">
                                 <div className="progress-bar-container mt-4  ">
-                                    <h2 className=' text-start barFont'>Core Java</h2>
+                                    <h2 className=' text-start barFont '>Core Java</h2>
                                     <div className="progress-bar w-auto">
                                         <span className="percentage corejava progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>90%</div>
@@ -145,7 +240,7 @@ function First() {
                                     </div>
                                 </div>
                                 <div className="progress-bar-container  ">
-                                    <h2 className=' text-start barFont'>Spring MVC</h2>
+                                    <h2 className=' text-start barFont '>Spring MVC</h2>
                                     <div className="progress-bar w-auto">
                                         <span className="percentage mvc progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>70%</div>
@@ -153,7 +248,7 @@ function First() {
                                     </div>
                                 </div>
                                 <div className="progress-bar-container barFont ">
-                                    <h2 className=' text-start'>Spring Boot</h2>
+                                    <h2 className=' text-start '>Spring Boot</h2>
                                     <div className="progress-bar w-auto">
                                         <span className="percentage boot progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>60%</div>
@@ -161,7 +256,7 @@ function First() {
                                     </div>
                                 </div>
                                 <div className="progress-bar-container  ">
-                                    <h2 className=' text-start barFont'>Oracle</h2>
+                                    <h2 className=' text-start barFont '>Oracle</h2>
                                     <div className="progress-bar w-auto">
                                         <span className="percentage oracle progressheight d-flex align-items-center flex-row-reverse pe-1 ">
                                             <div className='persentFont'>79%</div>
@@ -173,8 +268,9 @@ function First() {
                     </div>
                 </div>
                 <div className="  project mt-5" id="projects">
-                    <div className="row rowdiv  ">
-                        <h3 className='text-white mt-4 mainhead text-decoration-underline ' >Projects</h3>
+                    <div className="container-fluid row rowdiv  ">
+                        <h3 className=' text-white mt-4 mainhead text-decoration-underline p-3 square                       
+                        ' >Projects</h3>
                         <div className="col-lg-3    text-white   clinicMargin mt-3" >
                             <div className="innerContent bg-secondary">
                                 <h5 className='mt-3 text-decoration-underline  '>Clinic Management System</h5>
@@ -220,7 +316,7 @@ function First() {
                 </div>
                 <div className="container border border-white mt-5 bg-white" id="contact">
                     <div className="contactText border-bottom border-primary ">
-                        <h3 className='mt-3'>Contact form</h3>
+                        <h3 className=' p-3 square mt-3'>Contact form</h3>
                         <p>Get in touch with us! We'd love to hear from you.</p>
                     </div>
                     {/* CONTACT FORM CODING  */}
