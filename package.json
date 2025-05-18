@@ -18,6 +18,7 @@
   "react-scripts": "5.0.1",
   "react-toastify": "^10.0.5",
   "react-typed": "^2.0.12",
+  "react-use-downloader": "^1.2.10",
   "web-vitals": "^2.1.4"
  },
  "scripts": {

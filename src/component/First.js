@@ -10,8 +10,7 @@ import { animate, stagger, createDraggable, utils } from 'animejs';
 
 function First() {
     const headingRef = useRef(null);
-    const nameText = 'Ritesh Dafale';
-
+    const paragraphRef = useRef(null);
     useEffect(() => {
         toast.info("Welcome to Ritesh Dafale's Portfolio! Explore my work and projects.")
         document.title = "Ritesh Portfolio"
@@ -25,34 +24,37 @@ function First() {
                 // containerFriction: 0,
             });
         }
-        
+
+
         const margin = 100; // Optional margin from the edges
 
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
-      
+
         const xMin = -windowWidth / 1 + margin;
         const xMax = windowWidth / 1 - margin;
-      
+
         const yMin = -windowHeight / 1 + margin;
-        const yMax = windowHeight /1 - margin;
+        const yMax = windowHeight / 1 - margin;
 
         createDraggable('.Photo', {
-            modifier: utils.wrap(xMin,  xMax), // Global to both x and y
-            x: { modifier: utils.wrap(yMin,yMax) }, // Specific to x 
+            modifier: utils.wrap(xMin, xMax), // Global to both x and y
+            x: { modifier: utils.wrap(yMin, yMax) }, // Specific to x 
         });
         animate('.square', {
             boxShadow: [
                 {
                     to: stagger([1, .25], {
-                        modifier: v => `0 0 ${v *60}px ${v * 5}px currentColor`,
+                        modifier: v => `0 0 ${v * 60}px ${v * 5}px currentColor`,
                         from: 'center'
                     })
                 },
-                { to: stagger([1, .25], {
-                    modifier: v => `0 0 ${v *20}px ${v * 3}px currentColor`,
-                    from: 'center'
-                }) },
+                {
+                    to: stagger([1, .25], {
+                        modifier: v => `0 0 ${v * 20}px ${v * 3}px currentColor`,
+                        from: 'center'
+                    })
+                },
             ],
             delay: stagger(100, { from: 'center' }),
             loop: false
@@ -61,38 +63,56 @@ function First() {
             boxShadow: [
                 {
                     to: stagger([1, .25], {
-                        modifier: v => `0 0 ${v *35}px ${v * 5}px red`,
+                        modifier: v => `0 0 ${v * 35}px ${v * 5}px red`,
                         from: 'first'
                     })
                 },
-                { to: stagger([1, .25], {
-                    modifier: v => `0 0 ${v *15}px ${v * 3}px blue`,
-                    from: 'last'
-                })
-                 },
+                {
+                    to: stagger([1, .25], {
+                        modifier: v => `0 0 ${v * 15}px ${v * 3}px blue`,
+                        from: 'last'
+                    })
+                },
             ],
             delay: stagger(500, { from: 'center' }),
             loop: true
         });
 
-
-
-        if (!headingRef.current) return;
-        animate(headingRef.current.querySelectorAll('span'), {
+        animate('.textAnimate', {
+            // Property keyframes
             y: [
-                { to: '-1.75rem', ease: 'inBack', duration: 500 },
-                { to: 0, ease: 'inBack', duration: 500, delay: 100 },
+                { to: '-2.75rem', ease: 'inBounce', duration: 600 },
+                { to: 0, ease: 'in', duration: 800, delay: 100 }
             ],
+            // Property specific parameters
             rotate: {
                 from: '-1turn',
-                delay: 0,
+                delay: 0
             },
-            delay: (_, i) => i * 50,
-            ease: 'inBack',
-            //   ease: '',
+            delay: (_, i) => i * 50, // Function based value
+            ease: 'inElastic',
             loopDelay: 1000,
-            loop: true,
+            loop: true
         });
+
+        if (paragraphRef.current) {
+            animate(paragraphRef.current, {
+                opacity: [0, 1],
+                y: [
+                    { to: '-20px', ease: 'in', duration:900 },
+                    { to: '0px', ease: 'outBounce', duration: 800 }
+                ],
+                rotate: {
+                    from: '-0.25turn',
+                    to: '',
+                    duration: 800,
+                    easing: 'easeOut'
+                }
+            }, {
+                delay: 200,
+                easing: 'in',
+            });
+        }
     }, [])
 
     const [contact, setcontact] = useState([]);
@@ -135,6 +155,8 @@ function First() {
                 });
             }
         )
+
+        const letters = 'Animate Me'.split('');
     }
     const navigate = useNavigate();
     return (
@@ -142,14 +164,18 @@ function First() {
             <div className="  container-fluid text-center bg-dark w-100  " id="intro">
                 <div className=" firstSession w-100">
                     <div className="  row  firstrow ">
-                        <div className=" border  border-dark col  mt-5  image d-flex  justify-content-center w-25  photocol">
+                        <div className=" col  mt-5  image d-flex  justify-content-center w-25  photocol">
                             <div className='  innerPhotoImage ' >
                                 <img src={mypic} alt='Some problem' className='Photo draggable photo mt-3 rounded-circle'></img>
                             </div>
                         </div>
-                        <div className="col mt-5   position-relative w-75 contentcol  ">
-                            <h3 ref={headingRef} style={{ display: 'flex', gap: '0.1rem' }} className='text-white my-5   '> Ritesh Dafale  </h3>
-                            <p className='text-white me-5 text-start intro introshadow p-3'>I'm an MCA graduate from 2024, passionate about programming and eager to start my career as a Java Developer or Frontend Developer, with strong skills in Java 8, Spring Boot, Spring MVC, and React.</p>
+                        <div className="col mt-5 d-flex flex-column justify-content-center align-items-center    position-relative w-75 contentcol  ">
+                            <h3   className='text-white mt-3 '> Ritesh Dafale  </h3>
+                             <p className='textAnimation text-white  text-start intro  p-3'>I'm an MCA graduate from 2024, passionate about programming and eager to start my career as a Java Developer or Frontend Developer, with strong skills in Java 8, Spring Boot, Spring MVC, and React.</p> 
+                            {/* <p ref={paragraphRef}className="textAnimation text-white me-0 text-start intro  p-3"
+                            >
+                                I'm an MCA graduate from 2024, passionate about programming and eager to start my career as a Java Developer or Frontend Developer, with strong skills in Java 8, Spring Boot, Spring MVC, and React.
+                            </p> */}
                         </div>
                     </div>
                 </div>
@@ -163,23 +189,23 @@ function First() {
                         <h3 className='text-white text-decoration-underline p-3 square'>Education</h3>
                         <div className="col-lg-6 mt-3 text-white text-start maincontent">
                             <div className="Leftline" >
-                                <h5 className='mt-3 '>Master of Computer Application</h5>
-                                <p>2022 - 2024</p>
-                                <p className='lead fst-italic clgpara '>Prof. Ram Meghe Institute of Technology & Research, Amravati.</p>
+                                <h5 className='mt-3   '>Master of Computer Application</h5>
+                                <p className=' '>2022 - 2024</p>
+                                <p className='  '>Prof. Ram Meghe Institute of Technology & Research, Amravati.</p>
                                 <p>I completed my Master of Computer Applications (MCA) in 2024 . My coursework emphasized advanced programming, software development, and project management, providing a strong foundation for my career in IT.</p>
                             </div>
-                            <script>
+                            {/* <script>
                                 var offset = 300, // browser window scroll (in pixels) after which the "back to top" link is shown
                                 offsetOpacity = 1200, //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
                                 scrollDuration = 700;
-                            </script>
+                            </script> */}
                         </div>
 
                         <div className="col-lg-6 mt-3  text-white text-start" >
                             <div className="Leftline">
                                 <h5 className='mt-3 '>Bachelor of Computer Application</h5>
-                                <p>2019 - 2022</p>
-                                <p className='lead fst-italic clgpara'>Shri Shivaji Science College , Nagpur</p>
+                                <p classNmae=''>2019 - 2022</p>
+                                <p className=''>Shri Shivaji Science College , Nagpur</p>
                                 <p>Completed my Bachelor of Computer Applications (BCA) from 2019 to 2022, where I developed a strong foundation in programming, software development, and database management.</p>
                             </div>
                         </div>
