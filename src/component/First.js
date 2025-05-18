@@ -97,7 +97,7 @@ function First() {
             animate(paragraphRef.current, {
                 opacity: [0, 1],
                 y: [
-                    { to: '-20px', ease: 'in', duration:900 },
+                    { to: '-20px', ease: 'in', duration: 900 },
                     { to: '0px', ease: 'outBounce', duration: 800 }
                 ],
                 rotate: {
@@ -169,8 +169,8 @@ function First() {
                         </div>
 
                         <div className="col mt-5 d-flex flex-column justify-content-center align-items-center    position-relative w-75 contentcol  ">
-                            <h3   className='text-white mt-3 '> Ritesh Dafale  </h3>
-                             <p className='textAnimation text-white  text-start intro  p-3'>I'm an MCA graduate from 2024, passionate about programming and eager to start my career as a Java Developer or Frontend Developer, with strong skills in Java 8, Spring Boot, Spring MVC, and React.</p> 
+                            <h3 className='text-white mt-3 '> Ritesh Dafale  </h3>
+                            <p className='textAnimation text-white  text-start intro  p-3'>I'm an MCA graduate from 2024, passionate about programming and eager to start my career as a Java Developer or Frontend Developer, with strong skills in Java 8, Spring Boot, Spring MVC, and React.</p>
                             {/* <p ref={paragraphRef}className="textAnimation text-white me-0 text-start intro  p-3"
                             >
                                 I'm an MCA graduate from 2024, passionate about programming and eager to start my career as a Java Developer or Frontend Developer, with strong skills in Java 8, Spring Boot, Spring MVC, and React.
@@ -179,7 +179,7 @@ function First() {
                     </div>
                 </div>
 
-        {/* <div className="container chatbot text-white fixed-bottom mb-2  d-flex justify-content-end pointer text-white">
+                {/* <div className="container chatbot text-white fixed-bottom mb-2  d-flex justify-content-end pointer text-white">
             <div className="chatimage" style={{width:"39px"}} role='button'>
                  <img src={chatbot} className='w-100 h-100' alt="somr issue " 
                  onClick={()=>{
@@ -189,9 +189,7 @@ function First() {
             </div>
         </div> */}
 
-
-
-
+               
 
                 <div className=" container skills " id="education">
                     <div className="row education   mt-5 ">
