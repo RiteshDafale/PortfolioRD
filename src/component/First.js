@@ -1,15 +1,13 @@
 import React, { useEffect, memo, useState, useRef } from 'react'
 import mypic from '../component/Photos/Myphoto.jpg'
-import EyeClinicHomePage from '../component/Photos/Cinic-Home-page.jpg'
 import '../component/First.css'
-import { useNavigate } from 'react-router-dom';
-import Navbar from './navbar/Navbar';
+import { useNavigate, useNavigation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
 import { animate, stagger, createDraggable, utils } from 'animejs';
+import chatbot from '../component/images/chatbot.png';
 
 function First() {
-    const headingRef = useRef(null);
     const paragraphRef = useRef(null);
     useEffect(() => {
         toast.info("Welcome to Ritesh Dafale's Portfolio! Explore my work and projects.")
@@ -169,6 +167,7 @@ function First() {
                                 <img src={mypic} alt='Some problem' className='Photo draggable photo mt-3 rounded-circle'></img>
                             </div>
                         </div>
+
                         <div className="col mt-5 d-flex flex-column justify-content-center align-items-center    position-relative w-75 contentcol  ">
                             <h3   className='text-white mt-3 '> Ritesh Dafale  </h3>
                              <p className='textAnimation text-white  text-start intro  p-3'>I'm an MCA graduate from 2024, passionate about programming and eager to start my career as a Java Developer or Frontend Developer, with strong skills in Java 8, Spring Boot, Spring MVC, and React.</p> 
@@ -179,6 +178,16 @@ function First() {
                         </div>
                     </div>
                 </div>
+
+        {/* <div className="container chatbot text-white fixed-bottom mb-2  d-flex justify-content-end pointer text-white">
+            <div className="chatimage" style={{width:"39px"}} role='button'>
+                 <img src={chatbot} className='w-100 h-100' alt="somr issue " 
+                 onClick={()=>{
+                    navigate("/chatbot")
+                 }}
+                 ></img>
+            </div>
+        </div> */}
 
 
 
