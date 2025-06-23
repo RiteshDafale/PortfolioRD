@@ -7,10 +7,12 @@
   "@testing-library/jest-dom": "^5.17.0",
   "@testing-library/react": "^13.4.0",
   "@testing-library/user-event": "^13.5.0",
+  "autoprefixer": "^10.4.21",
   "axios": "^1.7.7",
   "babel-runtime": "^6.26.0",
   "next-navigation": "^1.0.6",
   "nextjs-routes": "^2.2.1",
+  "postcss": "^8.5.3",
   "react": "^18.3.1",
   "react-dom": "^18.3.1",
   "react-router-dom": "^6.26.1",
@@ -19,6 +21,7 @@
   "react-toastify": "^10.0.5",
   "react-typed": "^2.0.12",
   "react-use-downloader": "^1.2.10",
+  "tailwindcss": "^4.1.7",
   "web-vitals": "^2.1.4"
  },
  "scripts": {
