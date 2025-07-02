@@ -1,0 +1,40 @@
+.bg-black {
+    background-color: red;
+}
+
+.terminam {
+    background-image: url("https://t4.ftcdn.net/jpg/04/92/22/93/360_F_492229389_5ve1bCKgYrLRHpCj3o4FAzz60efaZgG0.jpg");
+    width: 100%;
+    padding:23px
+
+}
+
+.subcontainer {
+    background: rgba(0, 0, 0, 0.5);
+    background-image: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+input , textarea {
+    border-bottom: 2px dashed white;
+    width: 60%;
+    padding: 13px;
+    text-align: center;
+    font-size: 25px;
+}
+
+input:focus-within , textarea:focus-within{
+    border:none;
+}
+
+.formCont {
+    border: 2px solid lightgray;
+}
+
+.Submitbtn{
+    /* width:45px;
+    background-colo */
+}

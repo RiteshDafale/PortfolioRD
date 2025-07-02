@@ -20,7 +20,7 @@ function Skills() {
         <div className="row">
           <div className="">
             <div className="skillbtn text-start m-0  d-flex justify-content-center row " >
-              <div className='d-flex  d-flex align-items-center  '
+              <div className='d-flex  d-flex align-items-center  col col   '
                 role='button'
                 style={{
                   width: "fit-content",
@@ -38,7 +38,7 @@ function Skills() {
                 <button className='  '>HTML</button>
               </div>
               {/*  CSS BUTTON */}
-              <div className='d-flex d-flex align-items-center justify-content-center p-1 mx-2 '
+              <div className='d-flex d-flex align-items-center justify-content-center p-1 mx-2 colcol'
                 role='button'
                 style={{
                   width: "fit-content",
@@ -77,7 +77,7 @@ function Skills() {
                 }}></img>
                 <button className=''>JavaScript</button>
               </div>
-              <div className='d-flex  d-flex align-items-center p-2 mx-2 '
+              <div className='d-flex  d-flex align-items-center p-2 mx-2 col'
                 role='button'
                 style={{
                   width: "fit-content",
@@ -172,7 +172,7 @@ function Skills() {
                 }}></img>
                 <button className='ms-2  '>Oracle</button>
               </div>
-              <div className='d-flex   d-flex align-items-center p-2 mx-1 '
+              <div className='d-flex   d-flex align-items-center p-2 mx-1  col'
                 role='button'
                 style={{
                   width: "fit-content",

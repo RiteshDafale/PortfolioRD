@@ -7,7 +7,6 @@ import Amazon from './component/Projects/Amazon';
 import Snake from './component/Projects/Snake';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Chatbot from './component/ai/Chatbot';
 
 
 
@@ -31,7 +30,6 @@ function App() {
         <Route path='/clinic' element={<Clinic />}></Route>
         <Route path='/amazon' element={<Amazon />}></Route>
         <Route path='/snake' element={<Snake />}></Route>
-        <Route path='/chatbot' element={<Chatbot/>} />
       </Routes>
 
     </div>

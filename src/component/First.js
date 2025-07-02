@@ -6,8 +6,8 @@ import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
 import { animate, stagger, createDraggable, utils } from 'animejs';
 import Skills from './Skills/Skills';
-import Contact from './Contact/Contact';
 import Project from './Project/Project';
+import Forms from './Forms/Forms';
 
 function First() {
     const paragraphRef = useRef(null);
@@ -59,60 +59,7 @@ function First() {
             delay: stagger(100, { from: 'center' }),
             loop: false
         });
-        // animate('.introshadow', {
-        //     boxShadow: [
-        //         {
-        //             to: stagger([1, .25], {
-        //                 modifier: v => `0 0 ${v * 35}px ${v * 5}px red`,
-        //                 from: 'first'
-        //             })
-        //         },
-        //         {
-        //             to: stagger([1, .25], {
-        //                 modifier: v => `0 0 ${v * 15}px ${v * 3}px blue`,
-        //                 from: 'last'
-        //             })
-        //         },
-        //     ],
-        //     delay: stagger(500, { from: 'center' }),
-        //     loop: true
-        // });
-
-        // animate('.textAnimate', {
-        //     // Property keyframes
-        //     y: [
-        //         { to: '-2.75rem', ease: 'inBounce', duration: 600 },
-        //         { to: 0, ease: 'in', duration: 800, delay: 100 }
-        //     ],
-        //     // Property specific parameters
-        //     rotate: {
-        //         from: '-1turn',
-        //         delay: 0
-        //     },
-        //     delay: (_, i) => i * 50, // Function based value
-        //     ease: 'inElastic',
-        //     loopDelay: 1000,
-        //     loop: true
-        // });
-
-        // if (paragraphRef.current) {
-        //     animate(paragraphRef.current, {
-        //         opacity: [0, 1],
-        //         y: [
-        //             { to: '-20px', ease: 'in', duration: 900 },
-        //             { to: '0px', ease: 'outBounce', duration: 800 }
-        //         ],
-        //         rotate: {
-        //             from: '-0.25turn',
-        //             to: '',
-        //             duration: 800,
-        //             easing: 'easeOut'
-        //         }
-        //     }, {
-        //         delay: 200,
-        //         easing: 'in',
-        //     });
-        // }
+     
     }, [])
 
     const [contact, setcontact] = useState([]);
@@ -174,6 +121,7 @@ function First() {
     return (
         <div className=''>
             <div className="  container-fluid text-center bg-dark w-100  " id="intro">
+                <h5 className="text-danger ">Under Maintainence , Developer is reconstruct the website </h5>
                 <div className=" firstSession w-100">
                     <div className="  row  firstrow ">
                         <div className=" col  mt-5  image d-flex  justify-content-center w-25  photocol">
@@ -214,7 +162,7 @@ function First() {
                     </div>
 
                    <Skills />
-
+                    <Forms/>
                    <Project/>
          
                 </div>
@@ -266,7 +214,6 @@ function First() {
                     </div>
                 </div>
             
-              <Contact/>
                 <div className="row secondSession " id="about">
                     <h2 className='text-white mt-5 text-decoration-underline text-decoration-red aboutHead  text-center'>About me</h2>
                     <div className="col intro align-middle w-25  ">
